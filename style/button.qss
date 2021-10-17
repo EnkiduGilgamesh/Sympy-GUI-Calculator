@@ -1,0 +1,34 @@
+/*-*- qt 6.2.0 -*-*/
+/*-*- coding:utf-8 -*-*/
+/***************************************************************************************************
+  * File: \button.qss                                                                              *
+  * Project: style                                                                                 *
+  * Created Date: Saturday Oct 16th 2021, 8:48:43 pm                                               *
+  * Author: Wenren Muyan                                                                           *
+  * Comments:                                                                                      *
+  * --------------------------------------------------------------------------------               *
+  * Last Modified: 17/10/2021 09:03:29                                                             *
+  * Modified By: Wenren Muyan                                                                      *
+  * --------------------------------------------------------------------------------               *
+  * Copyright (c) 2021 - future Wenren Muyan                                                       *
+  * --------------------------------------------------------------------------------               *
+  * HISTORY:                                                                                       *
+  * Date				By				Comments                                                   *
+  * --------------------------------------------------------------------------------               *
+***************************************************************************************************/
+
+
+QPushButton#button_plus {
+    background: yellow;
+    min-width: 2em;
+    min-height: 2em;
+}
+
+QPushButton {
+    background-color: red;
+    min-width: 2em;
+    min-height: 2em;
+    border-style: outset;
+    border-width: 2px;
+}
+
