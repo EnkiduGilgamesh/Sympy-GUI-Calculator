@@ -7,7 +7,7 @@
 # Author: Wenren Muyan                                                                             #
 # Comments:                                                                                        #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 27/10/2021 10:44:53                                                               #
+# Last Modified: 27/10/2021 01:21:3                                                                #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
@@ -30,9 +30,10 @@ fig.subplots_adjust(top=0.85)
 fig.suptitle(r'$\mathtt{\int_0^1 f(x)dx}$ $\frac{1}{x_2}$', fontsize=14)
 ax.set_title('axes title')
 
-ax.set_xlabel('xlabel')
-ax.set_ylabel('ylabel')
+# ax.set_xlabel('xlabel')
+# ax.set_ylabel('ylabel')
 
+'''
 # Set both x- and y-axis limits to [0, 10] instead of default [0, 1]
 ax.axis([0, 10, 0, 10])
 
@@ -51,5 +52,6 @@ ax.text(0.95, 0.01, 'colored text in axes coords',
 ax.plot([2], [1], 'o')
 ax.annotate('annotate', xy=(2, 1), xytext=(3, 4),
             arrowprops=dict(facecolor='black', shrink=0.05))
+'''
 
 plt.show()

@@ -7,7 +7,7 @@
 # Author: Wenren Muyan                                                                             #
 # Comments:                                                                                        #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 26/10/2021 10:09:51                                                               #
+# Last Modified: 27/10/2021 05:12:11                                                               #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
@@ -19,11 +19,42 @@
 
 import sys
 import re as reS
+import numpy as np
+#from PySide6.QtGui import QGradient
 
 from sympy import *
-from PySide6.QtWidgets import (QApplication, QPushButton, QTextBrowser, QVBoxLayout, \
-                               QWidget, QGridLayout, QTextEdit, QLabel, QLineEdit)
-from PySide6 import QtCore
+from PySide2.QtWidgets import (QApplication, QPushButton, QVBoxLayout, \
+                               QWidget, QGridLayout, QLabel, \
+                               QLineEdit, QGraphicsScene, QGraphicsView)
+from PySide2 import QtCore
+
+#from matplotlib.figure import Figure
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+import matplotlib.pyplot as plt
+
+
+class figureCanvas(FigureCanvasQTAgg):
+    def __init__(self, parent=None, width=10, height=5, dpi=100):
+        fig = plt.Figure(figsize=(width, height), dpi=dpi, tight_layout=True)
+
+        super(figureCanvas, self).__init__(fig)
+
+        self.axes = fig.add_subplot(111)
+
+        # Remove the axis
+
+    def axesConfig(self):
+        self.axes.spines['top'].set_visible(False)
+        self.axes.spines['right'].set_visible(False)
+        self.axes.spines['bottom'].set_visible(False)
+        self.axes.spines['left'].set_visible(False)
+        self.axes.xaxis.set_ticks([])
+        self.axes.yaxis.set_ticks([])
+        self.axes.set_xlim((-2, 2))
+        self.axes.set_ylim((-2, 2))
+
+    def dispalyRes(self, latex_cmd=""):
+        self.axes.text(-2, 1, r'${}$'.format(latex_cmd), style="italic", fontsize=15)
 
 
 class differential(QWidget):
@@ -42,12 +73,21 @@ class differential(QWidget):
         self.text_symbols = ""
         self.text_diff_symbols = ""
 
-        # line edit
+        self.view = QGraphicsView()
+        self.scene = QGraphicsScene()
 
-        self.edit_output = QTextEdit(self.text_output)
+        # matplotlib
+        self.latex_res = figureCanvas(width=self.view.width()/100,\
+                                      height=self.view.height()/100)
+        self.latex_res.axesConfig()
+        self.scene.addWidget(self.latex_res)
+        self.view.setScene(self.scene)
+        self.view.show()
+
+        # self.edit_output = QTextEdit(self.text_output)
         self.edit_input = QLineEdit()
 
-        self.edit_output.setPlaceholderText("output")
+        # self.edit_output.setPlaceholderText("output")
         self.edit_input.setPlaceholderText("input")
 
         # symbols
@@ -83,8 +123,10 @@ class differential(QWidget):
 
         self.main_window.addWidget(self.edit_input)
         self.main_window.addWidget(self.widget_symbols)
-        self.main_window.addWidget(self.edit_output)
+        self.main_window.addWidget(self.view)
+        # self.main_window.addWidget(self.edit_output)
         self.main_window.addWidget(self.button_diff)
+
 
     @QtCore.Slot()
     def cal_diff(self):
@@ -104,16 +146,12 @@ class differential(QWidget):
             diff_cmd += ","
             diff_cmd += diff_sequence_symbols[i]
 
-        # print(diff_cmd)
-        # print("sympy.diff({}{})".format(self.edit_input.text(), diff_cmd))
         self.text_output = str(eval("latex(diff({}{}))".format(self.edit_input.text(), diff_cmd)))
 
-        self.edit_output.toMarkdown()
-        self.edit_output.setMarkdown("${}$".format(self.text_output))
-
-        #self.edit_output.setText("##\n")
-        #self.edit_output.setText("{}\n".format(self.text_output))
-        #self.edit_output.setText("##")
+        self.latex_res.axes.clear()
+        self.latex_res.axesConfig()
+        self.latex_res.dispalyRes(latex_cmd=self.text_output)
+        self.latex_res.draw()
 
 
 if __name__ == "__main__":
@@ -122,4 +160,4 @@ if __name__ == "__main__":
     di = differential()
     di.show()
 
-    sys.exit(app.exec())
+    sys.exit(app.exec_())
