@@ -7,7 +7,7 @@
 # Author: Wenren Muyan                                                                             #
 # Comments:                                                                                        #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 19/10/2021 12:42:25                                                               #
+# Last Modified: 26/10/2021 07:39:19                                                               #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
@@ -19,6 +19,7 @@
 
 
 import sys
+import re
 
 from PySide6.QtWidgets import (QApplication, QVBoxLayout, QWidget, QPushButton, QGridLayout, QLabel)
 from PySide6 import QtCore
@@ -35,6 +36,8 @@ class Form(QWidget):
         self.button_3 = QPushButton("button_3")
         self.button_3.setObjectName("button_3")
 
+        self.button_3.clicked.connect(self.cal_diff)
+
         self.layout.addWidget(self.button_1)
         self.layout.addWidget(self.button_2)
         self.layout.addWidget(self.button_3)
@@ -47,9 +50,18 @@ class Form(QWidget):
             self.setStyleSheet(_style)
         '''
 
+    @QtCore.Slot()
+    def cal_diff(self):
+        # print()
+        str1 = "x      y"
+        print(re.split(" +", str1))
+
 
 if __name__ == "__main__":
     app = QApplication([])
+
+    str1 = "abc   bcd"
+    print(re.split(" ", str1))
 
     myForm = Form()
     myForm.show()

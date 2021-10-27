@@ -1,13 +1,13 @@
 # -*- python 3.8.10 -*-
 # -*- coding:utf-8 -*-
 ####################################################################################################
-# File: \Adv_Cal.py                                                                                #
+# File: \differential.py                                                                           #
 # Project: Calculator                                                                              #
 # Created Date: Wednesday Oct 13th 2021, 8:52:43 am                                                #
 # Author: Wenren Muyan                                                                             #
 # Comments:                                                                                        #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 20/10/2021 10:41:45                                                               #
+# Last Modified: 26/10/2021 07:42:55                                                               #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
