@@ -1,5 +1,11 @@
+
 Include/
 Lib/
 Scripts/
 
 pyvenv.cfg
+note.md
+
+.vscode
+
+__pycache__
