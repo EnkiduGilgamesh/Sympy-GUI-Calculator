@@ -4,7 +4,7 @@ A simple GUI calculator depending on sympy to calculate integral, derivation and
 
 ## Pre-installation
 
-It is recommanded to run the code in Python visualenv.
+It is recommended to run the code in Python visualenv.
 
 The package blow is needed:
 
