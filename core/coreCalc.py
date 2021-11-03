@@ -7,7 +7,7 @@
 # Author: Wenren Muyan                                                                             #
 # Comments: calculate limit, integral, and differential                                            #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 2/11/2021 08:14:5                                                                 #
+# Last Modified: 2/11/2021 11:04:32                                                                #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
@@ -42,7 +42,7 @@ class calcCore():
         elif slec == "Integrate":
             self.calcInteg()
         elif slec == "Limit":
-            self.clacLimit()
+            self.calcLimit()
         else:
             return
         

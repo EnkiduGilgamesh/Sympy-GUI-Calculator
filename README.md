@@ -17,10 +17,28 @@ The package blow is needed:
 
 Simply run the **calculator.py** file with packages above installed as
 
-```
+```cmd
 python calculator.py
 ```
 
-Or, use other IDE's debug tools.
+Or, use other IDE's debug tools!
 
-The exe flie can be downloaded [here](https://pan.baidu.com/s/1W6LbtomTZ6Ijg4qGrC34wA) using code **p2jx**.
+The exe flie can be downloaded [here](https://pan.baidu.com/s/1-56TS6thm9eU2PQbnUUTog) using code **0jtb**.
+
+## Example
+
+### Interface
+
+![2021-11-03-Calc_Diff](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-11-03-Calc_Interface.gif)
+
+### Derivate
+
+![2021-11-03-Calc_Diff](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-11-03-Calc_Diff.gif)
+
+### Integral
+
+![2021-11-03-Calc_Integral](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-11-03-Calc_Integral.gif)
+
+### Limit
+
+![2021-11-03-Calc_Limit](https://raw.githubusercontent.com/EnkiduGilgamesh/PicBed/main/Image_LaTeX/2021-11-03-Calc_Limit.gif)
