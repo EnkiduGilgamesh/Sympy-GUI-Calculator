@@ -7,7 +7,7 @@
 # Author: Wenren Muyan                                                                             #
 # Comments: Make a user interface                                                                  #
 # --------------------------------------------------------------------------------                 #
-# Last Modified: 2/11/2021 08:56:12                                                                #
+# Last Modified: 6/11/2021 11:00:50                                                                #
 # Modified By: Wenren Muyan                                                                        #
 # --------------------------------------------------------------------------------                 #
 # Copyright (c) 2021 - future Wenren Muyan                                                         #
@@ -64,15 +64,15 @@ class calcGUI(QWidget):
 
     def initMenu(self):
         self.menuBar = QMenuBar()
-        self.editMenu = QMenu("Edit")
-        self.helpMenu = QMenu("Help")
+        self.editMenu = QMenu("编辑")
+        self.helpMenu = QMenu("帮助")
 
         self.menuBar.addMenu(self.editMenu)
         self.menuBar.addMenu(self.helpMenu)
 
-        self.undoAct = QAction("undo")
-        self.redoAct = QAction("redo")
-        self.docsAct = QAction("docs")
+        self.undoAct = QAction("撤销")
+        self.redoAct = QAction("重做")
+        self.docsAct = QAction("文档")
 
         self.editMenu.addAction(self.undoAct)
         self.editMenu.addAction(self.redoAct)
@@ -85,23 +85,23 @@ class calcGUI(QWidget):
         self.initTabInteg()
         self.initTabLimit()
 
-        self.tabBar.addTab(self.widgetDiff, "Derivation")
-        self.tabBar.addTab(self.widgetInteg, "Integral")
-        self.tabBar.addTab(self.widgetLimit, "Limit")
+        self.tabBar.addTab(self.widgetDiff, "导数")
+        self.tabBar.addTab(self.widgetInteg, "积分")
+        self.tabBar.addTab(self.widgetLimit, "极限")
 
     def initTabDiff(self):
         self.widgetDiff = QWidget()
 
         self.editDiffInput = QLineEdit()
-        self.editDiffInput.setPlaceholderText("Input")
+        self.editDiffInput.setPlaceholderText("输入表达式")
 
-        self.labelDiffSymbols = QLabel("Symbols")
+        self.labelDiffSymbols = QLabel("符号")
         self.editDiffSymbols = QLineEdit()
 
         self.editDiffSeq = QLineEdit()
-        self.labelDiffSeq = QLabel("Derivation Symbol Sequence")
+        self.labelDiffSeq = QLabel("求导顺序")
 
-        self.buttonDiff = QPushButton("Derivate")
+        self.buttonDiff = QPushButton("求导")
 
         self.layoutDiff = QGridLayout()
 
@@ -120,15 +120,15 @@ class calcGUI(QWidget):
         self.widgetInteg = QWidget()
 
         self.editIntegInput = QLineEdit()
-        self.editIntegInput.setPlaceholderText("Input")
+        self.editIntegInput.setPlaceholderText("输入表达式")
 
-        self.labelIntegSymbols = QLabel("Symbols")
+        self.labelIntegSymbols = QLabel("符号")
         self.editIntegSymbols = QLineEdit()
 
         self.editIntegRange = QLineEdit()
-        self.labelIntegRange = QLabel("Integral Range")
+        self.labelIntegRange = QLabel("积分符号（及范围）")
 
-        self.buttonInteg = QPushButton("Integrate")
+        self.buttonInteg = QPushButton("求积分")
 
         self.layoutInteg = QGridLayout()
 
@@ -147,15 +147,15 @@ class calcGUI(QWidget):
         self.widgetLimit = QWidget()
 
         self.editLimitInput = QLineEdit()
-        self.editLimitInput.setPlaceholderText("Input")
+        self.editLimitInput.setPlaceholderText("输入表达式")
 
-        self.labelLimitSymbols = QLabel("Symbols")
+        self.labelLimitSymbols = QLabel("符号")
         self.editLimitSymbols = QLineEdit()
 
         self.editLimitVal = QLineEdit()
-        self.labelLimitRange = QLabel("Limit")
+        self.labelLimitRange = QLabel("符号及其趋近值")
 
-        self.buttonLimit = QPushButton("Limit")
+        self.buttonLimit = QPushButton("求极限")
 
         self.layoutLimit = QGridLayout()
 
