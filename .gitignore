@@ -1,7 +1,12 @@
-
 Include/
 Lib/
 Scripts/
+venv/
+
+build/
+dist/
+
+./*.spec
 
 pyvenv.cfg
 note.md
