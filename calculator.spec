@@ -7,7 +7,8 @@ block_cipher = None
 a = Analysis(['calculator.py'],
              pathex=[],
              binaries=[],
-             datas=[],
+             datas=[('.\\img\\icon','.\\img\\icon'),
+                    ('.\\docs\\docs.html','.\\docs')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
@@ -33,7 +34,7 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None )
+          entitlements_file=None , icon='img\\icon\\int_64x64.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

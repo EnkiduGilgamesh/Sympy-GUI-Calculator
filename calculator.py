@@ -17,7 +17,6 @@
 # --------------------------------------------------------------------------------                 #
 ####################################################################################################
 
-import sys
 
 from PySide2.QtWidgets import QApplication
 from PySide2 import QtCore
@@ -77,10 +76,9 @@ class mainProg():
         self.window.showDocs()
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
+app = QApplication()
 
-    prog = mainProg()
-    prog.windowShow()
+prog = mainProg()
+prog.windowShow()
 
-    sys.exit(app.exec_())
+app.exec_()

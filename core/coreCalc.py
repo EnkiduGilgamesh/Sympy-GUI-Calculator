@@ -64,7 +64,7 @@ class calcCore():
 
         self.output = str(eval("latex({})".format(diff_cmd)))
 
-        print(self.output)
+        # print(self.output)
 
     def calcInteg(self):
         oper_symbols = RE.split(" +", self.input[1])
