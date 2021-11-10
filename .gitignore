@@ -4,8 +4,8 @@ Lib/
 Scripts/
 venv/
 
-build/**
-dist/**
+build/
+dist/
 
 pyvenv.cfg
 note.md
