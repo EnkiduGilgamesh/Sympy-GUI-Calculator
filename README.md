@@ -23,7 +23,8 @@ python calculator.py
 
 Or, use other IDE's debug tools!
 
-The exe flie can be downloaded [here](https://pan.baidu.com/s/1-56TS6thm9eU2PQbnUUTog) using code **0jtb**.
+The exe flie can be downloaded [here](https://pan.baidu.com/s/1-56TS6thm9eU2PQbnUUTog) with code **0jtb**.
+The Chinese version is available [here](https://pan.baidu.com/s/1ppxrm51tdNXeMWgDyXTyZg) with code **hu93**
 
 ## Example
 
